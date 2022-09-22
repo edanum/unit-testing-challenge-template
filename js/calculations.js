@@ -1,3 +1,8 @@
 export function cubicVolume(length, width, depth) {
-  return length * width * depth;
+  if (length>0 && width>0 && depth>0 ) {
+    return length * width * depth;
+  }
+  else {
+    return 0;
+  }
 }

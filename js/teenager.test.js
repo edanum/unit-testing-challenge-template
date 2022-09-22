@@ -1,6 +1,13 @@
 import { checkTeenagerStatus } from "./teenager.js";
 
-test("returns correct teenager status", () => {
-  const teenagerStatus = checkTeenagerStatus(15);
-  expect(teenagerStatus).toBe(true);
+const testData = [
+  [10, false],
+  [12, true],
+  [15, true],
+  [20, true],
+  [25, false],
+];
+
+test.each(testData)("returns correct names", (inputAge, expectedCheck) => {
+  expect(checkTeenagerStatus(inputAge)).toBe(expectedCheck);
 });
